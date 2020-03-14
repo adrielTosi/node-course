@@ -23,6 +23,16 @@ app.get('', (req, res) => {
   })
 })
 
+app.get('/about', (req, res) => {
+  res.render('about', {
+    title: "about"
+  })
+})
+
+// 404 Page
+app.get("*", (req, res) => {
+  res.render('404')
+})
 app.listen(3000, () => {
   console.log('Serve up on port 3000.')
 })
